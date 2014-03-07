@@ -1,5 +1,39 @@
 <?php
 
+function theme_setup() {
+    if (function_exists('add_theme_support')) {
+        add_theme_support('post-thumbnails');
+        set_post_thumbnail_size(1500, 400); // default Post Thumbnail dimensions   
+    }
+    if (function_exists('add_image_size')) {
+        add_image_size('home-thumb', 230, 129, true);
+        add_image_size('page-thumb', 650, 230, true);
+    }
+// This theme uses wp_nav_menu() in two locations.
+    register_nav_menus(array(
+        'primary' => __('Top primary menu', 'edictum'),
+        'secondary' => __('Secondary menu in footer', 'edictum'),
+    ));
+
+    /*
+     * Switch default core markup for search form, comment form, and comments
+     * to output valid HTML5.
+     */
+    add_theme_support('html5', array(
+        'search-form', 'comment-form', 'comment-list',
+    ));
+
+    /*
+     * Enable support for Post Formats.
+     * See http://codex.wordpress.org/Post_Formats
+     */
+    add_theme_support('post-formats', array(
+        'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery',
+    ));
+    require_once('wp_bootstrap_navwalker.php');
+}
+
+add_action('after_setup_theme', 'theme_setup');
 // /**
 //  * Class Name: wp_bootstrap_navwalker
 //  * GitHub URI: https://github.com/twittem/wp-bootstrap-navwalker

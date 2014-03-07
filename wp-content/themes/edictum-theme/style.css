@@ -315,6 +315,23 @@ img.attachment-post-thumbnail.wp-post-image{
 #sidebar .nav-tabs > li.active > a:focus{
 	border-top:none;
 }
+.content .attachment-page-thumb.wp-post-image{
+    width:100%;
+    height: auto;
+}
+/*Reset radius*/
+.panel-group .panel, .panel{
+    border-radius: 0;
+}
+.list-group-item:last-child{
+    border-radius: 0;
+}
+.list-group-item:first-child{
+    border-radius: 0;
+}
+.nav-tabs > li > a{
+    border-radius: 0;
+}
 /*Tabs*/
 #sidebar .tab-content{
 	background-color: #fff;

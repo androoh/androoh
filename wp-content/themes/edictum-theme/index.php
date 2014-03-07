@@ -54,7 +54,9 @@
 			<?php endif;?>
 			<div class="col-xs-6 col-md-4 post">
 				<a href="<?=the_permalink()?>" class="thumbnail">
-					<?=the_post_thumbnail()?> 
+                                        <?php if(has_post_thumbnail()):?>
+					<?=the_post_thumbnail('home-thumb')?> 
+                                        <?php endif;?>
 					<div class="post-title">
 						<h3><?=the_title()?></h3>
 					</div>
