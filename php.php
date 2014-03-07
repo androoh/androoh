@@ -12,6 +12,7 @@
 </head>
 <body class="php">
 <div id="container">
+	<h3>Welcome to the casa mare</h3>
 	<div id="main" role="main" class="hellobox">
 		<header><a href="http://koding.com">Koding.com</a></header>
 		<h1><?php echo 'Hello World!'; ?>
